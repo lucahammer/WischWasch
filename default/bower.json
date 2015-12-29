@@ -4,7 +4,8 @@
     "bootstrap": "~3",
     "font-awesome": "~4",
     "jquery": "~2",
-    "moment": "~2"
+    "moment": "~2",
+    "jquery-stupid-table": "~1"
   },
   "overrides": {
     "bootstrap": {
@@ -12,6 +13,9 @@
     },
     "font-awesome": {
       "main": ["less/*", "fonts/*"]
+    },
+    "jquery-stupid-table": {
+        "js": ["jquery-stupid-table.min.js"]
     }
   }
 }

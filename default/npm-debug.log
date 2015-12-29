@@ -1,0 +1,212 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose readDependencies loading dependencies from C:\wischwasch\default\package.json
+5 warn package.json gae-init@ No description
+6 warn package.json gae-init@ No README data
+7 warn package.json Dependency 'jquery-stupid-table' exists in both dependencies and devDependencies, using 'jquery-stupid-table@~1' from dependencies
+8 verbose install where, deps [ 'C:\\wischwasch\\default',
+8 verbose install   [ 'coffee-script',
+8 verbose install     'less',
+8 verbose install     'uglify-js',
+8 verbose install     'jquery-stupid-table',
+8 verbose install     'bower',
+8 verbose install     'del',
+8 verbose install     'gulp',
+8 verbose install     'gulp-autoprefixer',
+8 verbose install     'gulp-bower',
+8 verbose install     'gulp-coffee',
+8 verbose install     'gulp-concat',
+8 verbose install     'gulp-help',
+8 verbose install     'gulp-less',
+8 verbose install     'gulp-livereload',
+8 verbose install     'gulp-load-plugins',
+8 verbose install     'gulp-minify-css',
+8 verbose install     'gulp-plumber',
+8 verbose install     'gulp-sequence',
+8 verbose install     'gulp-size',
+8 verbose install     'gulp-sourcemaps',
+8 verbose install     'gulp-start',
+8 verbose install     'gulp-uglify',
+8 verbose install     'gulp-util',
+8 verbose install     'gulp-zip',
+8 verbose install     'main-bower-files',
+8 verbose install     'minimist',
+8 verbose install     'require-dir' ] ]
+9 verbose install where, peers [ 'C:\\wischwasch\\default', [] ]
+10 verbose installManyTop reading for lifecycle C:\wischwasch\default\package.json
+11 info preinstall gae-init@
+12 verbose unsafe-perm in lifecycle true
+13 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\bower\package.json
+14 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\coffee-script\package.json
+15 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\del\package.json
+16 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp\package.json
+17 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-autoprefixer\package.json
+18 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-bower\package.json
+19 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-coffee\package.json
+20 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-concat\package.json
+21 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-help\package.json
+22 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-less\package.json
+23 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-livereload\package.json
+24 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-load-plugins\package.json
+25 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-minify-css\package.json
+26 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-plumber\package.json
+27 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-sequence\package.json
+28 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-size\package.json
+29 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-sourcemaps\package.json
+30 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-start\package.json
+31 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-uglify\package.json
+32 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-util\package.json
+33 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\gulp-zip\package.json
+34 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\less\package.json
+35 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\main-bower-files\package.json
+36 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\minimist\package.json
+37 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\require-dir\package.json
+38 verbose installManyTop reading scoped package data from C:\wischwasch\default\node_modules\uglify-js\package.json
+39 info package.json gulp-coffee@2.3.1 No license field.
+40 info package.json gulp-sequence@0.4.1 No license field.
+41 verbose readDependencies loading dependencies from C:\wischwasch\default\package.json
+42 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\bower\package.json
+43 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\coffee-script\package.json
+44 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\del\package.json
+45 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp\package.json
+46 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-autoprefixer\package.json
+47 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-bower\package.json
+48 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-coffee\package.json
+49 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-concat\package.json
+50 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-help\package.json
+51 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-less\package.json
+52 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-livereload\package.json
+53 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-load-plugins\package.json
+54 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-minify-css\package.json
+55 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-plumber\package.json
+56 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-sequence\package.json
+57 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-size\package.json
+58 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-sourcemaps\package.json
+59 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-start\package.json
+60 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-uglify\package.json
+61 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-util\package.json
+62 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\gulp-zip\package.json
+63 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\less\package.json
+64 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\main-bower-files\package.json
+65 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\minimist\package.json
+66 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\require-dir\package.json
+67 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\uglify-js\package.json
+68 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\bower\package.json
+69 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\bower.cmd\package.json
+70 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\cake\package.json
+71 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\cake.cmd\package.json
+72 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\coffee\package.json
+73 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\coffee.cmd\package.json
+74 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\gulp\package.json
+75 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\gulp.cmd\package.json
+76 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\lessc\package.json
+77 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\lessc.cmd\package.json
+78 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\uglifyjs\package.json
+79 verbose targetResolver reading package data from C:\wischwasch\default\node_modules\.bin\uglifyjs.cmd\package.json
+80 verbose already installed skipping del@~2 C:\wischwasch\default
+81 verbose already installed skipping gulp@~3 C:\wischwasch\default
+82 verbose already installed skipping gulp-autoprefixer@~3 C:\wischwasch\default
+83 verbose already installed skipping gulp-bower@~0 C:\wischwasch\default
+84 verbose already installed skipping gulp-coffee@~2 C:\wischwasch\default
+85 verbose already installed skipping gulp-concat@~2 C:\wischwasch\default
+86 verbose already installed skipping gulp-help@~1 C:\wischwasch\default
+87 verbose already installed skipping gulp-less@~3 C:\wischwasch\default
+88 verbose already installed skipping gulp-livereload@~3 C:\wischwasch\default
+89 verbose already installed skipping gulp-load-plugins@~1 C:\wischwasch\default
+90 verbose already installed skipping gulp-minify-css@~1 C:\wischwasch\default
+91 verbose already installed skipping gulp-plumber@~1 C:\wischwasch\default
+92 verbose already installed skipping gulp-sequence@~0 C:\wischwasch\default
+93 verbose already installed skipping gulp-size@~2 C:\wischwasch\default
+94 verbose already installed skipping gulp-sourcemaps@~1 C:\wischwasch\default
+95 verbose already installed skipping gulp-start@~1 C:\wischwasch\default
+96 verbose already installed skipping gulp-uglify@~1 C:\wischwasch\default
+97 verbose already installed skipping gulp-util@~3 C:\wischwasch\default
+98 verbose already installed skipping gulp-zip@~3 C:\wischwasch\default
+99 verbose already installed skipping main-bower-files@~2 C:\wischwasch\default
+100 verbose already installed skipping minimist@~1 C:\wischwasch\default
+101 verbose already installed skipping require-dir@~0 C:\wischwasch\default
+102 verbose already installed skipping coffee-script@~1 C:\wischwasch\default
+103 verbose already installed skipping less@~2 C:\wischwasch\default
+104 verbose already installed skipping uglify-js@~2 C:\wischwasch\default
+105 silly cache add args [ 'jquery-stupid-table@~1', null ]
+106 verbose cache add spec jquery-stupid-table@~1
+107 silly cache add parsed spec { raw: 'jquery-stupid-table@~1',
+107 silly cache add   scope: null,
+107 silly cache add   name: 'jquery-stupid-table',
+107 silly cache add   rawSpec: '~1',
+107 silly cache add   spec: '>=1.0.0 <2.0.0',
+107 silly cache add   type: 'range' }
+108 silly addNamed jquery-stupid-table@>=1.0.0 <2.0.0
+109 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for jquery-stupid-table
+110 silly addNameRange { name: 'jquery-stupid-table',
+110 silly addNameRange   range: '>=1.0.0 <2.0.0',
+110 silly addNameRange   hasData: false }
+111 silly mapToRegistry name jquery-stupid-table
+112 silly mapToRegistry using default registry
+113 silly mapToRegistry registry https://registry.npmjs.org/
+114 silly mapToRegistry uri https://registry.npmjs.org/jquery-stupid-table
+115 verbose addNameRange registry:https://registry.npmjs.org/jquery-stupid-table not in flight; fetching
+116 verbose already installed skipping bower@~1 C:\wischwasch\default
+117 verbose request uri https://registry.npmjs.org/jquery-stupid-table
+118 verbose request no auth needed
+119 info attempt registry request try #1 at 14:11:29
+120 verbose request id 58f80f0f3475c724
+121 http request GET https://registry.npmjs.org/jquery-stupid-table
+122 http 404 https://registry.npmjs.org/jquery-stupid-table
+123 verbose headers { 'content-type': 'application/json',
+123 verbose headers   'cache-control': 'max-age=0',
+123 verbose headers   'content-length': '2',
+123 verbose headers   'accept-ranges': 'bytes',
+123 verbose headers   date: 'Tue, 29 Dec 2015 13:12:06 GMT',
+123 verbose headers   via: '1.1 varnish',
+123 verbose headers   age: '0',
+123 verbose headers   connection: 'keep-alive',
+123 verbose headers   'x-served-by': 'cache-fra1225-FRA',
+123 verbose headers   'x-cache': 'MISS',
+123 verbose headers   'x-cache-hits': '0',
+123 verbose headers   'x-timer': 'S1451394726.345441,VS0,VE177' }
+124 silly get cb [ 404,
+124 silly get   { 'content-type': 'application/json',
+124 silly get     'cache-control': 'max-age=0',
+124 silly get     'content-length': '2',
+124 silly get     'accept-ranges': 'bytes',
+124 silly get     date: 'Tue, 29 Dec 2015 13:12:06 GMT',
+124 silly get     via: '1.1 varnish',
+124 silly get     age: '0',
+124 silly get     connection: 'keep-alive',
+124 silly get     'x-served-by': 'cache-fra1225-FRA',
+124 silly get     'x-cache': 'MISS',
+124 silly get     'x-cache-hits': '0',
+124 silly get     'x-timer': 'S1451394726.345441,VS0,VE177' } ]
+125 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/jquery-stupid-table
+125 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:239:14)
+125 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:170:14)
+125 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:354:22)
+125 verbose stack     at Request.emit (events.js:110:17)
+125 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1207:14)
+125 verbose stack     at Request.emit (events.js:129:20)
+125 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1153:12)
+125 verbose stack     at IncomingMessage.emit (events.js:129:20)
+125 verbose stack     at _stream_readable.js:908:16
+125 verbose stack     at process._tickCallback (node.js:355:11)
+126 verbose statusCode 404
+127 verbose pkgid jquery-stupid-table
+128 verbose cwd C:\wischwasch\default
+129 error Windows_NT 6.3.9600
+130 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+131 error node v0.12.7
+132 error npm  v2.11.3
+133 error code E404
+134 error 404 Registry returned 404 for GET on https://registry.npmjs.org/jquery-stupid-table
+134 error 404
+134 error 404 'jquery-stupid-table' is not in the npm registry.
+134 error 404 You should bug the author to publish it (or use the name yourself!)
+134 error 404 It was specified as a dependency of 'gae-init'
+134 error 404
+134 error 404 Note that you can also install from a
+134 error 404 tarball, folder, http url, or git url.
+135 verbose exit [ 1, true ]

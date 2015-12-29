@@ -12,7 +12,8 @@
   "dependencies": {
     "coffee-script": "~1",
     "less": "~2",
-    "uglify-js": "~2"
+    "uglify-js": "~2",
+    "jquery-stupid-table": "~1"
   },
   "devDependencies": {
     "bower": "~1",
@@ -37,6 +38,7 @@
     "gulp-zip": "~3",
     "main-bower-files": "~2",
     "minimist": "~1",
-    "require-dir": "~0"
+    "require-dir": "~0",
+    "jquery-stupid-table": "~1"
   }
 }
