@@ -150,4 +150,14 @@ $(document).ready(function() {
   });
 
 });
+
+$(document).keydown(function(e){
+    if (e.keyCode == 39) { //positive
+        console.log("right");
+        $("")
+    }
+    else if (e.keyCode == 37) { //negative
+        console.log("left");
+    }
+});
 </script>
