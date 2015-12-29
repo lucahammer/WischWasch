@@ -8,8 +8,14 @@
 # endif
 <script type="text/javascript">
 /* Inspired by Tinder and Nikolay Talanov http://codepen.io/suez/*/
-  var positive = 0;
-  var negative = 0;
+  var rated = 0;
+  var ratings = [];
+  
+  function Rating(a,p,n) {
+      this.a = a;
+      this.p = p;
+      this.n = n;
+  }
   
 $(document).ready(function() {
 
@@ -20,8 +26,7 @@ $(document).ready(function() {
   var pullDeltaX = 0;
   var deg = 0;
   var $card, $cardReject, $cardLike;
-
-
+  
   function pullChange() { //What happens while moving a card
     animating = true;
     deg = pullDeltaX / 10;
@@ -36,14 +41,15 @@ $(document).ready(function() {
 
   function release() {
 
-    if (pullDeltaX >= decisionVal) {
+    if (pullDeltaX >= decisionVal) { //if content was is positive
       $card.addClass("to-right");
-      positive++;
-      $("table.ratings").append("<tr><td>"+$(".below .demo__card__name").text()+"</td><td>+1</td><td>0</td>");
-    } else if (pullDeltaX <= -decisionVal) {
+      ratings.push(new Rating($card.contents().find("p.demo__card__name").text(), 1, 0));
+      //$("table.ratings").append("<tr><td>"+$(".below .demo__card__name").text()+"</td><td>+1</td><td>0</td>");
+    } else if (pullDeltaX <= -decisionVal) { //if content is negative
       $card.addClass("to-left");
-      $("table.ratings").append("<tr><td>@Luca</td><td>0</td><td>-1</td>");
-      negative++;
+      ratings.push(new Rating($card.contents().find("p.demo__card__name").text(), 0, -1));
+      //$("table.ratings").append("<tr><td>@Luca</td><td>0</td><td>-1</td>");
+
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
