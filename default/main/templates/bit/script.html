@@ -15,6 +15,32 @@
       this.a = a;
       this.p = p;
       this.n = n;
+      this.up = function() {
+          this.p++;
+      }
+      this.down = function() {
+          this.n--;
+      }
+      
+  }
+  function addVote(array, account, vote) { //tests if account name already has ratings
+      found = false;
+      array.forEach(function (item, index, array) {
+          //console.log(item.a, index);
+          //console.log("test for" + account);
+          if (item.a == account) {
+              //console.log(ratings[index].p);
+              if (vote > 0){
+                  ratings[index].p++;
+                  found = true;
+              }
+              else if (vote < 0){
+                  ratings[index].n--;
+                  found = true;
+              }
+          }
+          });
+      return(found);
   }
   
 $(document).ready(function() {
@@ -43,14 +69,20 @@ $(document).ready(function() {
 
     if (pullDeltaX >= decisionVal) { //if content was is positive
       $card.addClass("to-right");
-      ratings.push(new Rating($card.contents().find("p.demo__card__name").text(), 1, 0));
+      var account = $card.contents().find("p.demo__card__name").text();
+      if (addVote(ratings, account, 1) == false) {
+          ratings.push(new Rating(account, 1, 0));
+      }
+      
       //$("table.ratings").append("<tr><td>"+$(".below .demo__card__name").text()+"</td><td>+1</td><td>0</td>");
     } else if (pullDeltaX <= -decisionVal) { //if content is negative
       $card.addClass("to-left");
-      ratings.push(new Rating($card.contents().find("p.demo__card__name").text(), 0, -1));
+      var account = $card.contents().find("p.demo__card__name").text();
+      if (addVote(ratings, account, -1) == false) {
+          ratings.push(new Rating(account, 0, -1));
+      }
+      }
       //$("table.ratings").append("<tr><td>@Luca</td><td>0</td><td>-1</td>");
-
-    }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
       $card.addClass("inactive");
