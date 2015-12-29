@@ -36,7 +36,7 @@ body {
 .demo__card-cont {
   position: relative;
   width: 24rem;
-  height: 32rem;
+  height: 33rem;
   margin: 0 auto 1rem;
 }
 .demo__card {
@@ -80,8 +80,8 @@ body {
   z-index: 1;
 }
 .demo__card__top {
-  height: 20.5rem;
-  padding-top: 4rem;
+  height: 8rem;
+  padding-top: 2rem;
 }
 .demo__card__top.purple {
   background: #7132B9;
@@ -103,30 +103,36 @@ body {
 }
 .demo__card__img {
   overflow: hidden;
-  width: 10rem;
-  height: 10rem;
-  margin: 0 auto 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 1rem 1.5rem;
+  float: left;
   border-radius: 50%;
-  border: 0.5rem solid #ffffff;
-  background-image: url("../img/demo.jpg");
+  border: 0.2rem solid #ffffff;
+  background-image: url("demo.png");
   background-size: cover;
+  display: none;
 }
 .demo__card__name {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
-  font-weight: bold;
   color: #fff;
+  padding-top: 0.5rem;
+  display: none;
 }
 .demo__card__btm {
-  height: 11.5rem;
+  height: 25rem;
+  display:table-cell; 
+  vertical-align:middle;
   background: #FFFFFF;
 }
 .demo__card__we {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  width: 24rem;
   background-color: #FFFFFF;
   overflow: hidden;
-  padding: 5px;
+  padding: 20px 5px;
 }
 .demo__card__choice {
   position: absolute;

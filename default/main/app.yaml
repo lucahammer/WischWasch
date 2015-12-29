@@ -23,7 +23,11 @@ handlers:
 - url: /favicon.ico
   static_files: static/img/favicon.ico
   upload: static/img/favicon.ico
-
+  
+- url: /demo.png
+  static_files: static/img/demo.png
+  upload: static/img/demo.png
+  
 - url: /robots.txt
   static_files: static/robots.txt
   upload: static/robots.txt
