@@ -55,4 +55,5 @@ def retrieve_user_from_twitter(response):
       name=response['screen_name'],
       username=response['screen_name'],
       twitterToken=flask.session['oauth_token'][0],
+      twitterSecret=flask.session['oauth_token'][1],
     )

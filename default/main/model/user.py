@@ -24,6 +24,7 @@ class User(model.Base):
   token = ndb.StringProperty(default='')
   password_hash = ndb.StringProperty(default='')
   twitterToken = ndb.StringProperty(default='')
+  twitterSecret = ndb.StringProperty(default='')
 
   def has_permission(self, perm):
     return self.admin or perm in self.permissions

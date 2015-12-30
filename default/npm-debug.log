@@ -108,81 +108,81 @@
 78 verbose targetResolver reading package data from C:\WischWasch\default\node_modules\.bin\lessc.cmd\package.json
 79 verbose targetResolver reading package data from C:\WischWasch\default\node_modules\.bin\uglifyjs\package.json
 80 verbose targetResolver reading package data from C:\WischWasch\default\node_modules\.bin\uglifyjs.cmd\package.json
-81 verbose already installed skipping gulp-load-plugins@~1 C:\WischWasch\default
-82 verbose already installed skipping gulp-minify-css@~1 C:\WischWasch\default
-83 verbose already installed skipping gulp-plumber@~1 C:\WischWasch\default
-84 verbose already installed skipping gulp-sequence@~0 C:\WischWasch\default
-85 verbose already installed skipping gulp-size@~2 C:\WischWasch\default
-86 verbose already installed skipping gulp-sourcemaps@~1 C:\WischWasch\default
-87 verbose already installed skipping gulp-start@~1 C:\WischWasch\default
-88 verbose already installed skipping gulp-uglify@~1 C:\WischWasch\default
-89 verbose already installed skipping gulp-util@~3 C:\WischWasch\default
-90 verbose already installed skipping gulp-zip@~3 C:\WischWasch\default
-91 verbose already installed skipping main-bower-files@~2 C:\WischWasch\default
-92 verbose already installed skipping minimist@~1 C:\WischWasch\default
-93 verbose already installed skipping require-dir@~0 C:\WischWasch\default
-94 verbose already installed skipping coffee-script@~1 C:\WischWasch\default
-95 verbose already installed skipping less@~2 C:\WischWasch\default
-96 verbose already installed skipping uglify-js@~2 C:\WischWasch\default
-97 silly cache add args [ 'jquery-stupid-table@~1', null ]
-98 verbose cache add spec jquery-stupid-table@~1
-99 silly cache add parsed spec { raw: 'jquery-stupid-table@~1',
-99 silly cache add   scope: null,
-99 silly cache add   name: 'jquery-stupid-table',
-99 silly cache add   rawSpec: '~1',
-99 silly cache add   spec: '>=1.0.0 <2.0.0',
-99 silly cache add   type: 'range' }
-100 silly addNamed jquery-stupid-table@>=1.0.0 <2.0.0
-101 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for jquery-stupid-table
-102 silly addNameRange { name: 'jquery-stupid-table',
-102 silly addNameRange   range: '>=1.0.0 <2.0.0',
-102 silly addNameRange   hasData: false }
-103 silly mapToRegistry name jquery-stupid-table
-104 silly mapToRegistry using default registry
-105 silly mapToRegistry registry https://registry.npmjs.org/
-106 silly mapToRegistry uri https://registry.npmjs.org/jquery-stupid-table
-107 verbose addNameRange registry:https://registry.npmjs.org/jquery-stupid-table not in flight; fetching
-108 verbose already installed skipping bower@~1 C:\WischWasch\default
-109 verbose already installed skipping del@~2 C:\WischWasch\default
-110 verbose already installed skipping gulp@~3 C:\WischWasch\default
-111 verbose already installed skipping gulp-autoprefixer@~3 C:\WischWasch\default
-112 verbose already installed skipping gulp-bower@~0 C:\WischWasch\default
-113 verbose already installed skipping gulp-coffee@~2 C:\WischWasch\default
-114 verbose already installed skipping gulp-concat@~2 C:\WischWasch\default
-115 verbose already installed skipping gulp-help@~1 C:\WischWasch\default
-116 verbose already installed skipping gulp-less@~3 C:\WischWasch\default
-117 verbose already installed skipping gulp-livereload@~3 C:\WischWasch\default
-118 verbose request uri https://registry.npmjs.org/jquery-stupid-table
-119 verbose request no auth needed
-120 info attempt registry request try #1 at 20:42:23
-121 verbose request id 3e9211983f109b96
-122 http request GET https://registry.npmjs.org/jquery-stupid-table
+81 verbose already installed skipping gulp-help@~1 C:\WischWasch\default
+82 verbose already installed skipping gulp-less@~3 C:\WischWasch\default
+83 verbose already installed skipping gulp-livereload@~3 C:\WischWasch\default
+84 verbose already installed skipping gulp-load-plugins@~1 C:\WischWasch\default
+85 verbose already installed skipping gulp-minify-css@~1 C:\WischWasch\default
+86 verbose already installed skipping gulp-plumber@~1 C:\WischWasch\default
+87 verbose already installed skipping gulp-sequence@~0 C:\WischWasch\default
+88 verbose already installed skipping gulp-size@~2 C:\WischWasch\default
+89 verbose already installed skipping gulp-sourcemaps@~1 C:\WischWasch\default
+90 verbose already installed skipping gulp-start@~1 C:\WischWasch\default
+91 verbose already installed skipping gulp-uglify@~1 C:\WischWasch\default
+92 verbose already installed skipping gulp-util@~3 C:\WischWasch\default
+93 verbose already installed skipping gulp-zip@~3 C:\WischWasch\default
+94 verbose already installed skipping main-bower-files@~2 C:\WischWasch\default
+95 verbose already installed skipping minimist@~1 C:\WischWasch\default
+96 verbose already installed skipping require-dir@~0 C:\WischWasch\default
+97 verbose already installed skipping coffee-script@~1 C:\WischWasch\default
+98 verbose already installed skipping less@~2 C:\WischWasch\default
+99 verbose already installed skipping uglify-js@~2 C:\WischWasch\default
+100 silly cache add args [ 'jquery-stupid-table@~1', null ]
+101 verbose cache add spec jquery-stupid-table@~1
+102 silly cache add parsed spec { raw: 'jquery-stupid-table@~1',
+102 silly cache add   scope: null,
+102 silly cache add   name: 'jquery-stupid-table',
+102 silly cache add   rawSpec: '~1',
+102 silly cache add   spec: '>=1.0.0 <2.0.0',
+102 silly cache add   type: 'range' }
+103 silly addNamed jquery-stupid-table@>=1.0.0 <2.0.0
+104 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for jquery-stupid-table
+105 silly addNameRange { name: 'jquery-stupid-table',
+105 silly addNameRange   range: '>=1.0.0 <2.0.0',
+105 silly addNameRange   hasData: false }
+106 silly mapToRegistry name jquery-stupid-table
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry uri https://registry.npmjs.org/jquery-stupid-table
+110 verbose addNameRange registry:https://registry.npmjs.org/jquery-stupid-table not in flight; fetching
+111 verbose already installed skipping bower@~1 C:\WischWasch\default
+112 verbose already installed skipping del@~2 C:\WischWasch\default
+113 verbose already installed skipping gulp@~3 C:\WischWasch\default
+114 verbose already installed skipping gulp-autoprefixer@~3 C:\WischWasch\default
+115 verbose already installed skipping gulp-bower@~0 C:\WischWasch\default
+116 verbose already installed skipping gulp-coffee@~2 C:\WischWasch\default
+117 verbose request uri https://registry.npmjs.org/jquery-stupid-table
+118 verbose request no auth needed
+119 info attempt registry request try #1 at 13:28:59
+120 verbose request id f8f6cf80f03bff7f
+121 http request GET https://registry.npmjs.org/jquery-stupid-table
+122 verbose already installed skipping gulp-concat@~2 C:\WischWasch\default
 123 http 404 https://registry.npmjs.org/jquery-stupid-table
 124 verbose headers { 'content-type': 'application/json',
 124 verbose headers   'cache-control': 'max-age=0',
 124 verbose headers   'content-length': '2',
 124 verbose headers   'accept-ranges': 'bytes',
-124 verbose headers   date: 'Tue, 29 Dec 2015 19:42:21 GMT',
+124 verbose headers   date: 'Wed, 30 Dec 2015 12:28:57 GMT',
 124 verbose headers   via: '1.1 varnish',
 124 verbose headers   age: '0',
 124 verbose headers   connection: 'keep-alive',
-124 verbose headers   'x-served-by': 'cache-ams4133-AMS',
+124 verbose headers   'x-served-by': 'cache-fra1246-FRA',
 124 verbose headers   'x-cache': 'MISS',
 124 verbose headers   'x-cache-hits': '0',
-124 verbose headers   'x-timer': 'S1451418141.874026,VS0,VE106' }
+124 verbose headers   'x-timer': 'S1451478537.122275,VS0,VE430' }
 125 silly get cb [ 404,
 125 silly get   { 'content-type': 'application/json',
 125 silly get     'cache-control': 'max-age=0',
 125 silly get     'content-length': '2',
 125 silly get     'accept-ranges': 'bytes',
-125 silly get     date: 'Tue, 29 Dec 2015 19:42:21 GMT',
+125 silly get     date: 'Wed, 30 Dec 2015 12:28:57 GMT',
 125 silly get     via: '1.1 varnish',
 125 silly get     age: '0',
 125 silly get     connection: 'keep-alive',
-125 silly get     'x-served-by': 'cache-ams4133-AMS',
+125 silly get     'x-served-by': 'cache-fra1246-FRA',
 125 silly get     'x-cache': 'MISS',
 125 silly get     'x-cache-hits': '0',
-125 silly get     'x-timer': 'S1451418141.874026,VS0,VE106' } ]
+125 silly get     'x-timer': 'S1451478537.122275,VS0,VE430' } ]
 126 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/jquery-stupid-table
 126 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:239:14)
 126 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:170:14)

@@ -15,6 +15,12 @@ inbound_services:
 libraries:
 - name: jinja2
   version: latest
+- name: ssl
+  version: latest
+  
+env_variables:
+   GAE_USE_SOCKETS_HTTPLIB : 'this-is-crazy'
+   REQUESTS_CA_BUNDLE : '/etc/ca-certificates.crt'
 
 error_handlers:
 - file: templates/error_static.html
