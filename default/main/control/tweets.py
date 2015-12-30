@@ -19,7 +19,7 @@ from main import app
 @auth.login_required
 def tweets():
   user_db = auth.current_user_db()
-  tokenTemp = "11985982-nhHMFIftu9DnbRWupF4chVVWRHEIDYEPB1mTcInFB".split('-') #user_db.twitterToken.split('-')
+  tokenTemp = user_db.twitterToken.split('-')
   access_token = tokenTemp[0]
   access_token_secret = tokenTemp[1]
  #twitter = Twython(config.CONFIG_DB.twitter_consumer_key, config.CONFIG_DB.twitter_consumer_secret,access_token, access_token_secret)
