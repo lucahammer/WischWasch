@@ -8,6 +8,7 @@ import model
 import util
 import twitter
 import tweepy
+import json
 
 from main import app
 
@@ -21,15 +22,15 @@ from main import app
 @auth.login_required
 def tweets():
   user_db = auth.current_user_db()
-  
- #twitter = Twython(config.CONFIG_DB.twitter_consumer_key, config.CONFIG_DB.twitter_consumer_secret,access_token, access_token_secret)
- # tweets = twitter.get_home_timeline(count=200)
-  #api = twitter.Api(consumer_key=config.CONFIG_DB.twitter_consumer_key, consumer_secret=config.CONFIG_DB.twitter_consumer_secret, access_token_key=access_token, access_token_secret=access_token_secret, cache=None)
-  #tweets = api.GetUserTimeline(screen_name='luca')
+ 
   authy = tweepy.OAuthHandler(config.CONFIG_DB.twitter_consumer_key, config.CONFIG_DB.twitter_consumer_secret)
   authy.set_access_token(user_db.twitterToken, user_db.twitterSecret)
-
+  
   api = tweepy.API(authy)
-
-  tweets = api.home_timeline()
-  return flask.render_template('tweets.json', html_class='tweets',tweets=tweets,)
+  tweets = api.home_timeline(count=50)
+  tweetstring = '{"tweets":['
+  for status in tweets:
+     tweetstring += '{"status":'+json.dumps(status.text)+',"account":"'+status.user.screen_name+'","avatar":"'+status.user.profile_image_url+'"},'
+  tweetstring += ']}'
+    
+  return flask.render_template('tweets.json', html_class='tweets',tweets=tweetstring,)
