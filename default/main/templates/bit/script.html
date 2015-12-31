@@ -18,7 +18,7 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
 
 
 /* Inspired by Tinder and Nikolay Talanov http://codepen.io/suez/*/
-  var rated = 0;
+  var first = true;
   var ratings = [];
   
   function Rating(a,p,n) {
@@ -68,6 +68,10 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
 $(document).ready(function() {
     
     function replaceCards(){
+        if (first == true){
+            first = false;
+            $("table.ratings").replaceWith("<table class='ratings'></table>")
+        }
     $.getJSON('tweets.json', function(data) {
         //console.log("got new tweets");
         newCards = '<div class="demo__card-cont">';
@@ -90,7 +94,7 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 6;
+  var numOfCards = 4;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -134,6 +138,8 @@ $(document).ready(function() {
         cardsCounter++;
         if (cardsCounter === numOfCards) {
           cardsCounter = 0;
+          ratings = [];
+          $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><div class="holder"><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div></div></div>');
           //$(".demo__card").removeClass("below");
           replaceCards(); //loads new deck of cards
         }

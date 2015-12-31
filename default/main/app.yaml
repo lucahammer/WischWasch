@@ -30,9 +30,9 @@ handlers:
   static_files: static/img/favicon.ico
   upload: static/img/favicon.ico
   
-- url: /demo.png
-  static_files: static/img/demo.png
-  upload: static/img/demo.png
+- url: /demo.jpg
+  static_files: static/img/demo.jpg
+  upload: static/img/demo.jpg
   
 - url: /robots.txt
   static_files: static/robots.txt
