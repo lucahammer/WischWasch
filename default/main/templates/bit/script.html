@@ -21,6 +21,7 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
   var first = true;
   var ratings = [];
   var loggedIn = false;
+  var max_tweet_id = 0;
   
   function Rating(a,p,n) {
       this.a = a;
@@ -83,11 +84,12 @@ $(document).ready(function() {
             $("table.ratings").replaceWith("<table class='ratings'></table>")
         }
         if (first == true && loggedIn == false) {
+            numOfCards = 0;
             $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><a class="btn btn-lg btn-block btn-social btn-twitter" href="https://wischwasch2.appspot.com/signin/twitter/?next=https%3A%2F%2Fwischwasch2.appspot.com%2F&amp;remember=true" title="" rel="nofollow"><span class="fa fa-twitter"></span>Sign in with Twitter</a></div>')
         }
         if (first == false && loggedIn == true) {
             $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><div class="holder"><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div></div></div>');
-    $.getJSON('tweets.json', function(data) {
+    $.getJSON('tweets.json?max_id='+max_tweet_id, function(data) {
         //console.log("got new tweets");
         newCards = '<div class="demo__card-cont">';
         data.tweets.forEach(function(item) {
@@ -100,7 +102,8 @@ $(document).ready(function() {
     });
     newCards += '</div>';
     numOfCards = data.tweets.length;
-    $("div.demo__card-cont").replaceWith(newCards); 
+    $("div.demo__card-cont").replaceWith(newCards);
+    max_tweet_id = data.max_tweet_id; 
     }).fail( function(data, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error);
     });
@@ -195,16 +198,38 @@ $(document).ready(function() {
       release();
     });
   });
-
-});
-
-$(document).keydown(function(e){
-    if (e.keyCode == 39) { //positive
-        console.log("right");
-        //console.log($(".demo__card:not(.inactive)"));
+  
+  $(document).keydown(function(e){
+    if (cardsCounter === numOfCards){
+    }
+    else if (e.keyCode == 39) { //positive
+        $(".inactive:not(.zback)").last().addClass("zback");
+        $card = $(".demo__card:not(.inactive)").last();
+        $card.addClass("to-right inactive");
+        var account = $card.contents().find("p.demo__card__name").text();
+        if (addVote(ratings, account, 1) == false) {
+          ratings.push(new Rating(account, 1, 0));
+        }
+        writeSummary();
+        cardsCounter++;
     }
     else if (e.keyCode == 37) { //negative
-        console.log("left");
+        $(".inactive:not(.zback)").last().addClass("zback");
+        $card = $(".demo__card:not(.inactive)").last();
+        $card.addClass("to-left inactive");
+        var account = $card.contents().find("p.demo__card__name").text();
+        if (addVote(ratings, account, -1) == false) {
+          ratings.push(new Rating(account, 0, -1));
+        }
+        writeSummary();
+        cardsCounter++;
     }
+    if (cardsCounter === numOfCards) {
+        cardsCounter = 0;
+        replaceCards();} //loads new deck of cards
 });
+
+});
+
+
 </script>
