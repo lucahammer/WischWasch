@@ -204,6 +204,7 @@ $(document).ready(function() {
     }
     else if (e.keyCode == 39) { //positive
         $(".inactive:not(.zback)").last().addClass("zback");
+        $(".inactive to-right zback").remove();
         $card = $(".demo__card:not(.inactive)").last();
         $card.addClass("to-right inactive");
         var account = $card.contents().find("p.demo__card__name").text();
@@ -215,6 +216,7 @@ $(document).ready(function() {
     }
     else if (e.keyCode == 37) { //negative
         $(".inactive:not(.zback)").last().addClass("zback");
+        $(".inactive to-right zback").remove();
         $card = $(".demo__card:not(.inactive)").last();
         $card.addClass("to-left inactive");
         var account = $card.contents().find("p.demo__card__name").text();
