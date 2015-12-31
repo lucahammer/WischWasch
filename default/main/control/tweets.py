@@ -25,7 +25,7 @@ def tweets():
   authy.set_access_token(user_db.twitterToken, user_db.twitterSecret)
   
   api = tweepy.API(authy)
-  tweets = api.home_timeline(count=50)
+  tweets = api.home_timeline(count=20)
   tweetstring = '{"tweets":['
   for status in tweets:
      tweetstring += '{"status":'+json.dumps(status.text)+',"account":"'+status.user.screen_name+'","avatar":"'+status.user.profile_image_url+'"},'
