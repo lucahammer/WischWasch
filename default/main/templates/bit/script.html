@@ -13,24 +13,9 @@ d=b:(d=b||a.data("sort-default")||f.ASC,a.data("sort-dir")&&(d=a.data("sort-dir"
 e.children("tbody").append(h);e.find("th").data("sort-dir",null).removeClass("sorting-desc sorting-asc");a.data("sort-dir",d).addClass("sorting-"+d);e.trigger("aftertablesort",{column:g,direction:d});e.css("display")},10);return a}};c.fn.updateSortVal=function(b){var a=c(this);a.is("[data-sort-value]")&&a.attr("data-sort-value",b);a.data("sort-value",b);return a};c.fn.stupidtable.dir={ASC:"asc",DESC:"desc"};c.fn.stupidtable.default_sort_fns={"int":function(b,a){return parseInt(b,10)-parseInt(a,10)},
 "float":function(b,a){return parseFloat(b)-parseFloat(a)},string:function(b,a){return b.localeCompare(a)},"string-ins":function(b,a){b=b.toLocaleLowerCase();a=a.toLocaleLowerCase();return b.localeCompare(a)}}})(jQuery);
 
-devjson = `{"tweets":[{"status":"Everyone else at the airport is pissed that they can't get home. I am happy to be stuck on the family farm in VA for a couple more days :D","account":"poornima","avatar":"http://pbs.twimg.com/profile_images/458801164016812033/2BVAdUSD_normal.jpeg"},{"status":"Raumfeld WLAN-Lautsprecher One S oder One M von Teufel https://t.co/LUO9k36ZbV #raumfeld #teufel #followerpower https://t.co/ZVdrkI0L5D","account":"boerge30","avatar":"http://pbs.twimg.com/profile_images/604599435771932673/VpZEzVzt_normal.jpg"},{"status":"RT @DLF_Forschung: 19:15 DLF: 'Zur Diskussion' #32c3 Hacker und Gesellschaft @constanzekurz @tj_tweets @welchering und Thilo Weichert https\u2026","account":"_jk","avatar":"http://pbs.twimg.com/profile_images/1140018803/jk_normal.PNG"},{"status":"RT @SandraOrlovic: evo ovde demantija @FHPHLC , od kojih je jedan zavrsio u pismima citalaca. https://t.co/57Zu4RdotV @StevanOCCRP @BIRNSrb\u2026","account":"Dunja_Mijatovic","avatar":"http://pbs.twimg.com/profile_images/673062453694103552/2GLE-MME_normal.jpg"}]}
-`
-var colors = ['lol', 'brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
+var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
 
-function replaceCards(){
-    var tweets = JSON.parse(devjson).tweets;
-    newCards = '<div class="demo__card-cont">';
-    tweets.forEach(function (item, index, array){
-        newCards += '<div class="demo__card"><div class="demo__card__btm"><p class="demo__card__we">';
-        newCards += item.status;    
-        newCards += '</div><div class="demo__card__top '+colors[Math.floor(Math.random()*colors.length)] +'"><div class="demo__card__img" style="background-image:url('+item.avatar+')"></div><p class="demo__card__name">';
-        newCards += item.account;
-        newCards += '</div><div class="demo__card__choice m--reject"></div><div class="demo__card__choice m--like"></div><div class="demo__card__drag"></div></div>'
-    });
-    newCards += '</div>'
-    $("div.demo__card-cont").replaceWith(newCards);
-        
-}
+
 
 /* Inspired by Tinder and Nikolay Talanov http://codepen.io/suez/*/
   var rated = 0;
@@ -71,14 +56,36 @@ function replaceCards(){
   function writeSummary() {
       var newTable = "<table class='ratings'><thead><tr><th data-sort='string'>Account</th><th data-sort='int'>Pos</th><th data-sort='int'>Neg</th></tr></thead><tbody>";
       ratings.forEach(function (item, index, array){
-          newTable += "<tr><td>"+item.a+"</td><td>"+item.p+"</td><td>"+item.n+"</td></tr>";
+          newTable += "<tr><td><a href='https://twitter.com/"+item.a+"'>"+item.a+"</a></td><td>"+item.p+"</td><td>"+item.n+"</td></tr>";
       });
       newTable += "</tbody></table>"
       $("table.ratings").replaceWith(newTable);
-      $("table.ratings").stupidtable();
+      var $table = $("table.ratings").stupidtable();
+      //var $thsort = $table.find("thead th").eq(1);
+      //$thsort.stupidsort('desc');
   }
   
 $(document).ready(function() {
+    
+    function replaceCards(){
+    $.getJSON('tweets.json', function(data) {
+        //console.log("got new tweets");
+        newCards = '<div class="demo__card-cont">';
+        data.tweets.forEach(function(item) {
+            newCards += '<div class="demo__card"><div class="demo__card__btm"><p class="demo__card__we">';
+            newCards += item.status;    
+            newCards += '</div><div class="demo__card__top '+colors[Math.floor(Math.random()*colors.length)] +'"><div class="demo__card__img" style="background-image:url('+item.avatar.replace('http','https')+')"></div><p class="demo__card__name">';
+            newCards += item.account;
+            newCards += '</div><div class="demo__card__choice m--reject"></div><div class="demo__card__choice m--like"></div><div class="demo__card__drag"></div></div>'
+
+    });
+    newCards += '</div>';
+    numOfCards = data.tweets.length;
+    $("div.demo__card-cont").replaceWith(newCards); 
+    }).fail( function(data, textStatus, error) {
+        console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+    });
+    };
 
 
   var animating = false;

@@ -5,8 +5,6 @@ import flask
 import auth
 import config
 import model
-import util
-import twitter
 import tweepy
 import json
 
@@ -31,6 +29,7 @@ def tweets():
   tweetstring = '{"tweets":['
   for status in tweets:
      tweetstring += '{"status":'+json.dumps(status.text)+',"account":"'+status.user.screen_name+'","avatar":"'+status.user.profile_image_url+'"},'
+  tweetstring = tweetstring[:-1] #removing that last ',' to get valid json
   tweetstring += ']}'
     
   return flask.render_template('tweets.json', html_class='tweets',tweets=tweetstring,)
