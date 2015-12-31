@@ -20,6 +20,7 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
 /* Inspired by Tinder and Nikolay Talanov http://codepen.io/suez/*/
   var first = true;
   var ratings = [];
+  var loggedIn = false;
   
   function Rating(a,p,n) {
       this.a = a;
@@ -66,12 +67,26 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
   }
   
 $(document).ready(function() {
-    
-    function replaceCards(){
-        if (first == true){
+    if($("span.fa-sign-in").length){
+        loggedIn = false;
+    }
+    else{
+        loggedIn = true;
+    }
+
+    function replaceCards(){  
+
+ 
+        if (first == true && loggedIn == true){
             first = false;
+            ratings = [];
             $("table.ratings").replaceWith("<table class='ratings'></table>")
         }
+        if (first == true && loggedIn == false) {
+            $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><a class="btn btn-lg btn-block btn-social btn-twitter" href="https://wischwasch2.appspot.com/signin/twitter/?next=https%3A%2F%2Fwischwasch2.appspot.com%2F&amp;remember=true" title="" rel="nofollow"><span class="fa fa-twitter"></span>Sign in with Twitter</a></div>')
+        }
+        if (first == false && loggedIn == true) {
+            $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><div class="holder"><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div></div></div>');
     $.getJSON('tweets.json', function(data) {
         //console.log("got new tweets");
         newCards = '<div class="demo__card-cont">';
@@ -89,7 +104,7 @@ $(document).ready(function() {
     }).fail( function(data, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error);
     });
-    };
+    }};
 
 
   var animating = false;
@@ -99,6 +114,8 @@ $(document).ready(function() {
   var pullDeltaX = 0;
   var deg = 0;
   var $card, $cardReject, $cardLike;
+  if (loggedIn == true){
+  replaceCards();}
   
   function pullChange() { //What happens while moving a card
     animating = true;
@@ -138,9 +155,7 @@ $(document).ready(function() {
         cardsCounter++;
         if (cardsCounter === numOfCards) {
           cardsCounter = 0;
-          ratings = [];
-          $("div.demo__card-cont").replaceWith('<div class="demo__card-cont"><div class="holder"><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div></div></div>');
-          //$(".demo__card").removeClass("below");
+         //$(".demo__card").removeClass("below");
           replaceCards(); //loads new deck of cards
         }
       }, 300);
