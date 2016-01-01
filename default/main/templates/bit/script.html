@@ -50,19 +50,19 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
   }
   
   function loadLocalRatings(){
-      ratings = [];
       var localRatingsString = localStorage.getItem('localRatings');
       ratings = JSON.parse(localRatingsString);
-      console.log(ratings);
+      //console.log(ratings);
       writeSummary();
   }
   
   function saveLocalRatings(){
       localStorage.setItem('localRatings', JSON.stringify(ratings));
-      console.log(JSON.stringify(ratings));
+      //console.log(JSON.stringify(ratings));
   }
   function deleteLocalRatings(){
       ratings = [];
+      saveLocalRatings();
       writeSummary();
   }
   
@@ -76,6 +76,7 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
       var $table = $("table.ratings").stupidtable();
       //var $thsort = $table.find("thead th").eq(1);
       //$thsort.stupidsort('desc');
+      saveLocalRatings();
   }
   
 $(document).ready(function() {
@@ -85,12 +86,14 @@ $(document).ready(function() {
     else{
         loggedIn = true;
     }
-    $("reset-ratings").click(function() {
+    $(".reset-ratings").click(function() {
         deleteLocalRatings();
     });
 
     function replaceCards(){  
-
+        if (loggedIn == true) {
+            loadLocalRatings();
+        }
  
         if (first == true && loggedIn == true){
             first = false;
@@ -118,6 +121,7 @@ $(document).ready(function() {
     numOfCards = data.tweets.length;
     $("div.demo__card-cont").replaceWith(newCards);
     max_tweet_id = data.max_tweet_id; 
+    writeSummary();
     }).fail( function(data, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error);
     });
@@ -132,7 +136,7 @@ $(document).ready(function() {
   var deg = 0;
   var $card, $cardReject, $cardLike;
   if (loggedIn == true){
-  replaceCards();}
+    replaceCards();}
   
   function pullChange() { //What happens while moving a card
     animating = true;
