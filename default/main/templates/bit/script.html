@@ -27,12 +27,6 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
       this.a = a;
       this.p = p;
       this.n = n;
-      this.up = function() {
-          this.p++;
-      }
-      this.down = function() {
-          this.n--;
-      }
 
   }
   function addVote(array, account, vote) { //tests if account name already has ratings
@@ -55,10 +49,27 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
       return(found);
   }
   
-  function writeSummary() {
-      var newTable = "<table class='ratings'><thead><tr><th data-sort='string'>Account</th><th data-sort='int'>Pos</th><th data-sort='int'>Neg</th></tr></thead><tbody>";
+  function loadLocalRatings(){
+      ratings = [];
+      var localRatingsString = localStorage.getItem('localRatings');
+      ratings = JSON.parse(localRatingsString);
+      console.log(ratings);
+      writeSummary();
+  }
+  
+  function saveLocalRatings(){
+      localStorage.setItem('localRatings', JSON.stringify(ratings));
+      console.log(JSON.stringify(ratings));
+  }
+  function deleteLocalRatings(){
+      ratings = [];
+      writeSummary();
+  }
+  
+  function writeSummary() { //create table with ratings
+      var newTable = "<table class='ratings'><thead><tr><th data-sort='string'>Account</th><th data-sort='int'>Neg</th><th data-sort='int' data-sort-default='desc'>Pos</th></tr></thead><tbody>";
       ratings.forEach(function (item, index, array){
-          newTable += "<tr><td><a href='https://twitter.com/"+item.a+"'>"+item.a+"</a></td><td>"+item.p+"</td><td>"+item.n+"</td></tr>";
+          newTable += "<tr><td><a href='https://twitter.com/"+item.a+"'>"+item.a+"</a></td><td>"+item.n+"</td><td>"+item.p+"</td></tr>";
       });
       newTable += "</tbody></table>"
       $("table.ratings").replaceWith(newTable);
@@ -74,13 +85,16 @@ $(document).ready(function() {
     else{
         loggedIn = true;
     }
+    $("reset-ratings").click(function() {
+        deleteLocalRatings();
+    });
 
     function replaceCards(){  
 
  
         if (first == true && loggedIn == true){
             first = false;
-            ratings = [];
+            //ratings = loadLocalRatings();
             $("table.ratings").replaceWith("<table class='ratings'></table>")
         }
         if (first == true && loggedIn == false) {
@@ -141,6 +155,7 @@ $(document).ready(function() {
           ratings.push(new Rating(account, 1, 0));
       }
       writeSummary();
+      //saveLocalRatings();
     } else if (pullDeltaX <= -decisionVal) { //if content is negative
       $card.addClass("to-left");
       var account = $card.contents().find("p.demo__card__name").text();
@@ -148,6 +163,7 @@ $(document).ready(function() {
           ratings.push(new Rating(account, 0, -1));
       }
       writeSummary();
+      //saveLocalRatings();
       }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {

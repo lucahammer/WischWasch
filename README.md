@@ -8,8 +8,8 @@ timline gradually. Through simple swipes. [Try it now!](https://wischwasch2.apps
 
 How does it work?
 ------------------------------------------------------
-You decide for each update if you like it (swipe right) or not (swipe left). After several updates you get some stats
-on how much you liked or disliked tweets from a certain person.
+You decide for each update if you like it (swipe right) or not (swipe left). After each swipe the table with the results
+gets updated. You can sort it by tipping on the table headings. In the future more complex stuff could be added.
 
 Who are you?
 ------------------------------------------------------
@@ -17,11 +17,10 @@ I am [@Luca](https://twitter.com/luca). I can't code but I enjoy it.
 
 ToDo-List
 ------------------------------------------------------
-* Set up Git and Google App Engine
 * Write about the goal of the project
-* Add demo content
-* Add search
-* Fix twitter login
+* Add option to rate tweets of a single account, list,...
+* Save ratings locally
+* Save ratings in a database
 * Add new todos
 
 Ideas
@@ -29,7 +28,9 @@ Ideas
 * Support other platforms
 * Apps with same functionality but paid for iOS/Android/Windows 10
 * Visuals
-* Big data recommendation thingy
+* Import other clues (likes, mutes, RTs,...)
+* Big data recommendation thingy ("You dislike tweets with these URLs, topics,...")
+* Discover new accounts (rate accounts you don't follow but your followings follow)
 
 Help me!
 ------------------------------------------------------
