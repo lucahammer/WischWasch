@@ -202,9 +202,9 @@ $(document).ready(function() {
   $(document).keydown(function(e){
     if (cardsCounter === numOfCards){
     }
-    else if (e.keyCode == 39) { //positive
-        $(".inactive:not(.zback)").last().addClass("zback");
-        $(".inactive to-right zback").remove();
+    else if (e.keyCode == 39) { //press arrow right, positive
+        $(".zback").remove();
+        $(".to-right:not(.zback)").last().addClass("zback");
         $card = $(".demo__card:not(.inactive)").last();
         $card.addClass("to-right inactive");
         var account = $card.contents().find("p.demo__card__name").text();
@@ -214,9 +214,9 @@ $(document).ready(function() {
         writeSummary();
         cardsCounter++;
     }
-    else if (e.keyCode == 37) { //negative
-        $(".inactive:not(.zback)").last().addClass("zback");
-        $(".inactive to-right zback").remove();
+    else if (e.keyCode == 37) { //press arrow left, negative
+        $(".zback").remove();
+        $(".to-left:not(.zback)").last().addClass("zback");
         $card = $(".demo__card:not(.inactive)").last();
         $card.addClass("to-left inactive");
         var account = $card.contents().find("p.demo__card__name").text();
