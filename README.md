@@ -11,16 +11,19 @@ How does it work?
 You decide for each update if you like it (swipe right) or not (swipe left). After each swipe the table with the results
 gets updated. You can sort it by tipping on the table headings. In the future more complex stuff could be added.
 
-Who are you?
+About Luca
 ------------------------------------------------------
-I am [@Luca](https://twitter.com/luca). I can't code but I enjoy it.
+I am [@Luca](https://twitter.com/luca). I can't code but I enjoy it. As a result there is a lot of spaghetti code. 
+I am aware of many problems in the code (every function should have one input, one output and one task, max 5 lines? whoops.).
+I am glad about feedback and you can tell me even the obvious because for me it isn't always obvious. Want to refactor the code? 
+You are welcome! Take the ideas and code your own implementation because mine is crap? Do it!
 
 ToDo-List
 ------------------------------------------------------
 * Write about the goal of the project
 * Add option to rate tweets of a single account, list,...
-* Save ratings locally
 * Save ratings in a database
+* Add mechanism to prevent multiple votes on the same tweet
 * Add new todos
 
 Ideas
