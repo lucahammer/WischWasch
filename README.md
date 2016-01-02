@@ -20,11 +20,11 @@ You are welcome! Take the ideas and code your own implementation because mine is
 
 ToDo-List
 ------------------------------------------------------
-* Write about the goal of the project - done
+* Write about the goal of the project - [done (in german)](http://www.2-blog.net/2016/01/01/das-ist-wischwasch-timeline-aufraeumen/)
+* Add mechanism to prevent multiple votes on the same tweet
 * undo button
 * Add option to rate tweets of a single account, list,...
 * Save ratings in a database
-* Add mechanism to prevent multiple votes on the same tweet
 * Add new todos
 
 Ideas
