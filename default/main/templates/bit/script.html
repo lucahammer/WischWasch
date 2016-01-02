@@ -102,7 +102,7 @@ $(document).ready(function() {
     $(".reset-ratings").click(function() {
         deleteLocalRatings();
     });
-    $(".undo-last_swipe").click(function() {
+    $(".undo-last-swipe").click(function() {
         undoLastSwipe();
     });
     
@@ -286,6 +286,9 @@ $(document).ready(function() {
         }
         writeSummary();
         cardsCounter++;
+    }
+    else if (e.which === 90 && e.ctrlKey){
+        undoLastSwipe();
     }
     if (cardsCounter === numOfCards) {
         cardsCounter = 0;
