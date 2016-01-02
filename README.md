@@ -22,7 +22,9 @@ ToDo-List
 ------------------------------------------------------
 * Write about the goal of the project - [done (in german)](http://www.2-blog.net/2016/01/01/das-ist-wischwasch-timeline-aufraeumen/)
 * Add mechanism to prevent multiple votes on the same tweet
-* undo button
+* Undo button
+* Swipe up/down to vote neutral
+* Option Panel (exclude Retweets, Replies, Links, Images; swipe right == heart)
 * Add option to rate tweets of a single account, list,...
 * Save ratings in a database
 * Add new todos
