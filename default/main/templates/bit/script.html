@@ -92,6 +92,28 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
       saveLocalRatings();
   }
   
+  var cardsCounter = 4;
+  function undoLastSwipe(){
+        var account = $(".last_swipe").contents().find("p.demo__card__name").text();
+        if ($(".last_swipe").hasClass("to-right")) { 
+             ratings.forEach(function (item, index, array){
+                 if (item.a == account){
+                     item.p--;
+                 }
+             });
+        }
+        else if ($(".last_swipe").hasClass("to-left")) { 
+             ratings.forEach(function (item, index, array){
+                 if (item.a == account){
+                     item.n++;
+                 }
+             });
+        }
+        $(".last_swipe").removeClass("to-left to-right inactive last_swipe zback");
+        writeSummary();
+        cardsCounter--;
+    }
+  
 $(document).ready(function() {
     if($("span.fa-sign-in").length){
         loggedIn = false;
@@ -102,6 +124,11 @@ $(document).ready(function() {
     $(".reset-ratings").click(function() {
         deleteLocalRatings();
     });
+    $(".undo-last_swipe").click(function() {
+        undoLastSwipe();
+    });
+    
+    
 
     function replaceCards(){  
         if (loggedIn == true) {
@@ -166,7 +193,8 @@ $(document).ready(function() {
   function release() {
 
     if (pullDeltaX >= decisionVal) { //if content was is positive
-      $card.addClass("to-right");
+      $(".last_swipe").removeClass("last_swipe");
+      $card.addClass("to-right last_swipe");
       var account = $card.contents().find("p.demo__card__name").text();
       if (addVote(ratings, account, 1) == false) {
           ratings.push(new Rating(account, 1, 0));
@@ -174,7 +202,8 @@ $(document).ready(function() {
       writeSummary();
       //saveLocalRatings();
     } else if (pullDeltaX <= -decisionVal) { //if content is negative
-      $card.addClass("to-left");
+      $(".last_swipe").removeClass("last_swipe");
+      $card.addClass("to-left last_swipe");
       var account = $card.contents().find("p.demo__card__name").text();
       if (addVote(ratings, account, -1) == false) {
           ratings.push(new Rating(account, 0, -1));
@@ -239,7 +268,8 @@ $(document).ready(function() {
         $(".zback").remove();
         $(".to-right:not(.zback)").last().addClass("zback");
         $card = $(".demo__card:not(.inactive)").last();
-        $card.addClass("to-right inactive");
+        $(".last_swipe").removeClass("last_swipe");
+        $card.addClass("to-right inactive last_swipe");
         var account = $card.contents().find("p.demo__card__name").text();
         if (addVote(ratings, account, 1) == false) {
           ratings.push(new Rating(account, 1, 0));
@@ -251,7 +281,8 @@ $(document).ready(function() {
         $(".zback").remove();
         $(".to-left:not(.zback)").last().addClass("zback");
         $card = $(".demo__card:not(.inactive)").last();
-        $card.addClass("to-left inactive");
+        $(".last_swipe").removeClass("last_swipe");
+        $card.addClass("to-left inactive last_swipe");
         var account = $card.contents().find("p.demo__card__name").text();
         if (addVote(ratings, account, -1) == false) {
           ratings.push(new Rating(account, 0, -1));
