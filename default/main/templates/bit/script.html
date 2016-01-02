@@ -92,7 +92,21 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
       saveLocalRatings();
   }
   
-  function undoLastSwipe(){
+$(document).ready(function() {
+    if($("span.fa-sign-in").length){
+        loggedIn = false;
+    }
+    else{
+        loggedIn = true;
+    }
+    $(".reset-ratings").click(function() {
+        deleteLocalRatings();
+    });
+    $(".undo-last_swipe").click(function() {
+        undoLastSwipe();
+    });
+    
+    function undoLastSwipe(){
         var account = $(".last_swipe").contents().find("p.demo__card__name").text();
         if ($(".last_swipe").hasClass("to-right")) { 
              ratings.forEach(function (item, index, array){
@@ -112,22 +126,6 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
         writeSummary();
         cardsCounter--;
     }
-  
-$(document).ready(function() {
-    if($("span.fa-sign-in").length){
-        loggedIn = false;
-    }
-    else{
-        loggedIn = true;
-    }
-    $(".reset-ratings").click(function() {
-        deleteLocalRatings();
-    });
-    $(".undo-last_swipe").click(function() {
-        undoLastSwipe();
-    });
-    
-    
 
     function replaceCards(){  
         if (loggedIn == true) {
