@@ -27,7 +27,7 @@ def tweets():
   authy.set_access_token(user_db.twitterToken, user_db.twitterSecret)
   
   api = tweepy.API(authy)
-  if max_tweet_id != '0':
+  if max_tweet_id != '0' and max_tweet_id != 'undefined':
     tweets = api.home_timeline(count=30, max_id=max_tweet_id)
   else:
     tweets = api.home_timeline(count=30)
