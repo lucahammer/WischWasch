@@ -148,6 +148,7 @@ $(document).ready(function() {
     $.getJSON('tweets.json?max_id='+max_tweet_id, function(data) {
         //console.log("got new tweets");
         newCards = '<div class="demo__card-cont">';
+        data.tweets.reverse();
         data.tweets.forEach(function(item) {
             newCards += '<div class="demo__card" data-tweetid="'+item.id+'"><div class="demo__card__btm"><p class="demo__card__we">';
             newCards += item.status;    

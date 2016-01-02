@@ -28,7 +28,8 @@ def tweets():
   
   api = tweepy.API(authy)
   if max_tweet_id != '0' and max_tweet_id != 'undefined':
-    tweets = api.home_timeline(count=30, max_id=max_tweet_id)
+    max_tweet_id = int(max_tweet_id)-1 #only load tweets that are older
+    tweets = api.home_timeline(count=30, max_id=str(max_tweet_id))
   else:
     tweets = api.home_timeline(count=30)
   tweetstring = '{"tweets":['
