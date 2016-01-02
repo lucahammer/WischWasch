@@ -20,7 +20,8 @@ You are welcome! Take the ideas and code your own implementation because mine is
 
 ToDo-List
 ------------------------------------------------------
-* Write about the goal of the project
+* Write about the goal of the project - done
+* undo button
 * Add option to rate tweets of a single account, list,...
 * Save ratings in a database
 * Add mechanism to prevent multiple votes on the same tweet
