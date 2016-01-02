@@ -147,7 +147,7 @@ $(document).ready(function() {
         //console.log("got new tweets");
         newCards = '<div class="demo__card-cont">';
         data.tweets.forEach(function(item) {
-            newCards += '<div class="demo__card"><div class="demo__card__btm"><p class="demo__card__we">';
+            newCards += '<div class="demo__card" data-tweetId="'+item.id+'"><div class="demo__card__btm"><p class="demo__card__we">';
             newCards += item.status;    
             newCards += '</div><div class="demo__card__top '+colors[Math.floor(Math.random()*colors.length)] +'"><div class="demo__card__img" style="background-image:url('+item.avatar.replace('http','https')+')"></div><p class="demo__card__name">';
             newCards += item.account;
@@ -196,6 +196,7 @@ $(document).ready(function() {
       if (addVote(ratings, account, 1) == false) {
           ratings.push(new Rating(account, 1, 0));
       }
+      max_tweet_id = $card.data("tweetId");
       writeSummary();
       //saveLocalRatings();
     } else if (pullDeltaX <= -decisionVal) { //if content is negative
@@ -205,6 +206,7 @@ $(document).ready(function() {
       if (addVote(ratings, account, -1) == false) {
           ratings.push(new Rating(account, 0, -1));
       }
+      max_tweet_id = $card.data("tweetId");
       writeSummary();
       //saveLocalRatings();
       }
@@ -271,6 +273,7 @@ $(document).ready(function() {
         if (addVote(ratings, account, 1) == false) {
           ratings.push(new Rating(account, 1, 0));
         }
+        max_tweet_id = $card.data("tweetId");
         writeSummary();
         cardsCounter++;
     }
@@ -284,6 +287,7 @@ $(document).ready(function() {
         if (addVote(ratings, account, -1) == false) {
           ratings.push(new Rating(account, 0, -1));
         }
+        max_tweet_id = $card.data("tweetId");
         writeSummary();
         cardsCounter++;
     }
