@@ -33,7 +33,7 @@ def tweets():
     tweets = api.home_timeline(count=30)
   tweetstring = '{"tweets":['
   for status in tweets:
-     tweetstring += '{"status":'+json.dumps(status.text)+',"account":"'+status.user.screen_name+'","avatar":"'+status.user.profile_image_url+'"},'
+     tweetstring += '{"status":'+json.dumps(status.text)+',"account":"'+status.user.screen_name+'","avatar":"'+status.user.profile_image_url+'", "id":"'+status.id_str+"'},'
      max_tweet_id = status.id_str
   tweetstring = tweetstring[:-1] #removing that last ',' to get valid json
   tweetstring += '], "max_tweet_id":"'+max_tweet_id+'"}'

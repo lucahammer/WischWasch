@@ -52,12 +52,25 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
   function loadLocalRatings(){
       var localRatingsString = localStorage.getItem('localRatings');
       ratings = JSON.parse(localRatingsString);
+      var time_of_last_swipe = localStorage.getItem('time_of_last_swipe'); //last time of activity in milliseconds
+      var d = new Date();
+      var n = d.getTime();
+      if (n - time_of_last_swipe > 21600000) { //falls letzte activity mehr als 6 Stunden her     
+      }
+      else {
+          max_tweet_id =  localStorage.getItem('max_tweet_id'); //mach weiter, wo zuletzt aufgehört wurde
+      }
+      
       //console.log(ratings);
       writeSummary();
   }
   
   function saveLocalRatings(){
       localStorage.setItem('localRatings', JSON.stringify(ratings));
+      localStorage.setItem('max_tweet_id', max_tweet_id); 
+      var d = new Date();
+      var n = d.getTime(); 
+      localStorage.setItem('time_of_last_swipe', n)
       //console.log(JSON.stringify(ratings));
   }
   function deleteLocalRatings(){
@@ -120,7 +133,7 @@ $(document).ready(function() {
     newCards += '</div>';
     numOfCards = data.tweets.length;
     $("div.demo__card-cont").replaceWith(newCards);
-    max_tweet_id = data.max_tweet_id; 
+    //max_tweet_id = data.max_tweet_id; 
     writeSummary();
     }).fail( function(data, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error);
