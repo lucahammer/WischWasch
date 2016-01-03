@@ -169,6 +169,8 @@ $(document).ready(function() {
     writeSummary();
     }).fail( function(data, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+        localStorage.setItem('max_tweet_id', '0'); 
+        console.log("Resetting max_id");
     });
     }};
 
