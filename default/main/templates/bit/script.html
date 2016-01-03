@@ -50,17 +50,22 @@ var colors = ['brown', 'purple', 'blue', 'indigo', 'cyan', 'lime'];
   }
   
   function loadLocalRatings(){
-      var localRatingsString = localStorage.getItem('localRatings');
-      ratings = JSON.parse(localRatingsString);
-      var time_of_last_swipe = localStorage.getItem('time_of_last_swipe'); //last time of activity in milliseconds
-      var d = new Date();
-      var n = d.getTime();
-      if (n - time_of_last_swipe > 21600000) { //falls letzte activity mehr als 6 Stunden her     
-        console.log("Du warst seit sechs Stunden nicht mehr hier.")
+      if (localStorage.getItem("localRatings") === null) {
+          ratings = [];    
       }
       else {
-          console.log("Lade Tweets, die du noch nicht bewertet hast.")
-          max_tweet_id =  localStorage.getItem('max_tweet_id'); //mach weiter, wo zuletzt aufgehört wurde
+          var localRatingsString = localStorage.getItem('localRatings');
+          ratings = JSON.parse(localRatingsString);
+          var time_of_last_swipe = localStorage.getItem('time_of_last_swipe'); //last time of activity in milliseconds
+          var d = new Date();
+          var n = d.getTime();
+          if (n - time_of_last_swipe > 21600000) { //falls letzte activity mehr als 6 Stunden her     
+            console.log("Du warst seit sechs Stunden nicht mehr hier.")
+          }
+          else {
+              console.log("Lade Tweets, die du noch nicht bewertet hast.")
+              max_tweet_id =  localStorage.getItem('max_tweet_id'); //mach weiter, wo zuletzt aufgehört wurde
+          }
       }
       
       //console.log(ratings);
